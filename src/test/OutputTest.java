@@ -9,6 +9,10 @@ public class OutputTest {
         // code that will be invoked when this test is instantiated
         driver = new DriverSetup().getDriver();
     }
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+    }
     @Test(groups = {"full"})
     public void testFullFunctionality() {
         driver.get("https://www.google.com");
